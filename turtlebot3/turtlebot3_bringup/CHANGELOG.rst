@@ -2,14 +2,47 @@
 Changelog for package turtlebot3_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.2.4 (2020-09-29)
+2.1.4 (2022-02-08)
 ------------------
-* Package info updated
-* Contributors: Will Son
+* add LDS-02 support
 
-1.2.3 (2020-03-03)
+2.1.3 (2021-09-02)
 ------------------
-* none
+* ROS 2 Rolling Ridley supported
+* fix ambiguous ParameterValue calls (#748, #736)
+* Contributors: m2-farzan, Will Son
+
+2.1.2 (2021-04-07)
+------------------
+* rename nav2 params
+* modify robot_state_publisher
+* Contributors: David Park, Will Son
+
+2.1.1 (2021-01-06)
+------------------
+* turtlebot3.repos updated to target correct distro
+* galactic-devel branch created
+* Eloquent EOL
+* Contributors: Ashe Kim, Will Son
+
+2.1.0 (2020-06-22)
+------------------
+* ROS 2 Foxy Fitzroy supported
+* ROS 2 Eloquent Elusor supported
+* Contributors: Ryan, Ashe
+
+2.0.1 (2019-09-05)
+------------------
+* Updated the CHANGELOG and version to release binary packages
+* Modified dependency packages
+* Contributors: Darby Lim, Pyo
+
+2.0.0 (2019-08-20)
+------------------
+* Supported ROS 2 Dashing Diademata
+* Updated the CHANGELOG and version to release binary packages
+* Fixed ROS2 dependencies and library install `#454 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/454>`_
+* Contributors: Emerson Knapp, Darby Lim, Pyo
 
 1.2.2 (2019-08-20)
 ------------------

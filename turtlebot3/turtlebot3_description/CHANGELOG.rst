@@ -2,16 +2,44 @@
 Changelog for package turtlebot3_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.2.4 (2020-09-29)
+2.1.4 (2022-02-08)
 ------------------
-* Package info updated
+* none
+
+2.1.3 (2021-09-02)
+------------------
+* ROS 2 Rolling Ridley supported
 * Contributors: Will Son
 
-1.2.3 (2020-03-03)
+2.1.2 (2021-04-07)
 ------------------
-* Updated inertial data in turtlebot3_waffle_for_open_manipulator.urdf.xacro, turtlebot3_waffle_pi_for_open_manipulator.urdf.xacro
-* Added turtlebot3_manipulation_slam.launch for TurtleBot3 SLAM with OpenMANIPULATOR
-* Contributors: Ryan Shim, Will Son
+* None
+
+2.1.1 (2021-01-06)
+------------------
+* turtlebot3.repos updated to target correct distro
+* galactic-devel branch created
+* Eloquent EOL
+* Contributors: Ashe Kim, Will Son
+
+2.1.0 (2020-06-22)
+------------------
+* ROS 2 Foxy Fitzroy supported
+* ROS 2 Eloquent Elusor supported
+* Contributors: Ryan, Ashe
+
+2.0.1 (2019-09-05)
+------------------
+* Updated the CHANGELOG and version to release binary packages
+* Modified dependency packages
+* Contributors: Darby Lim, Pyo
+
+2.0.0 (2019-08-20)
+------------------
+* Supported ROS 2 Dashing Diademata
+* Updated the CHANGELOG and version to release binary packages
+* Removed ament_export_dependency(xacro) `#462 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/462>`_
+* Contributors: Ross Desmond, Darby Lim, Pyo
 
 1.2.2 (2019-08-20)
 ------------------
@@ -53,7 +81,7 @@ Changelog for package turtlebot3_description
 0.2.0 (2018-03-12)
 ------------------
 * added waffle pi model (urdf and gazebo)
-* modified topic of gazebo plugin 
+* modified topic of gazebo plugin
 * refactoring for release
 * modified r200 tf tree
 * modified gazebo imu link

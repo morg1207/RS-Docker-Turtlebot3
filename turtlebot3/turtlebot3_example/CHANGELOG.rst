@@ -2,18 +2,38 @@
 Changelog for package turtlebot3_example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.2.4 (2020-09-29)
+2.1.4 (2022-02-08)
 ------------------
-* Package info updated
+* none
+
+2.1.3 (2021-09-02)
+------------------
+* ROS 2 Rolling Ridley supported
 * Contributors: Will Son
 
-1.2.3 (2020-03-03)
+2.1.2 (2021-04-07)
 ------------------
-* none
+* None
 
-1.2.2 (2019-08-20)
+2.1.1 (2021-01-06)
 ------------------
-* none
+* Nav2 prefix filename removed
+* turtlebot3.repos updated to target correct distro
+* galactic-devel branch created
+* Eloquent EOL
+* Contributors: Ashe Kim, Will Son
+
+2.1.0 (2020-06-22)
+------------------
+* ROS 2 Foxy Fitzroy supported
+* ROS 2 Eloquent Elusor supported
+* Contributors: Ryan, Ashe
+
+2.0.1 (2019-09-05)
+------------------
+* Updated the CHANGELOG and version to release binary packages
+* Modified dependency packages
+* Contributors: Darby Lim, Pyo
 
 1.2.1 (2019-08-20)
 ------------------
