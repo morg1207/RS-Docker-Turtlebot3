@@ -2,16 +2,59 @@
 Changelog for package turtlebot3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.2.4 (2020-09-29)
+2.1.4 (2022-02-08)
 ------------------
-* Package info updated
-* Contributors: Will Son
+* add LDS-02 support
 
-1.2.3 (2020-03-03)
+2.1.3 (2021-09-02)
 ------------------
-* Updated inertial data in turtlebot3_waffle_for_open_manipulator.urdf.xacro, turtlebot3_waffle_pi_for_open_manipulator.urdf.xacro
-* Added turtlebot3_manipulation_slam.launch for TurtleBot3 SLAM with OpenMANIPULATOR
-* Contributors: Ryan Shim, Will Son
+* ROS 2 Rolling Ridley supported
+* fix ambiguous ParameterValue calls (#748, #736)
+* fix RViz2 Cartographer default config
+* Contributors: m2-farzan, Will Son
+
+2.1.2 (2021-04-07)
+------------------
+* use static param types for Galactic
+* fix SensorState msg
+* rename nav2 params
+* modify robot_state_publisher
+* Contributors: jhbirdchoi, David Park, Will Son
+
+2.1.1 (2021-01-06)
+------------------
+* Nav2 prefix filename removed
+* turtlebot3.repos updated to target correct distro
+* galactic-devel branch created
+* Eloquent EOL
+* Contributors: Ashe Kim, Will Son
+
+2.1.0 (2020-06-22)
+------------------
+* ROS 2 Foxy Fitzroy supported
+* ROS 2 Eloquent Elusor supported
+* Enable Windows port
+* Contributors: Ryan, Ashe, Sean Yen
+
+2.0.1 (2019-09-05)
+------------------
+* Updated the CHANGELOG and version to release binary packages
+* Added missing exec_depend for nav2_bringup
+* Modified dependency packages
+* Contributors: Ruffin, Darby Lim, Pyo
+
+2.0.0 (2019-08-20)
+------------------
+* Supported ROS 2 Dashing Diademata
+* Updated the CHANGELOG and version to release binary packages
+* Removed ament_export_dependency(xacro) `#462 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/462>`_
+* Added use_sim_time parameter for rviz2 `#456 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/456>`_
+* Fixed ROS2 dependencies and library install `#454 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/454>`_
+* Fixed turtlebot3.repos `#447 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/447>`_ `#432 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/432>`_
+* Fixed scan rate to 5hz `#418 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/418>`_
+* Initialized joint states variables `#411 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/411>`_
+* Updated map.yaml `#386 <https://github.com/ROBOTIS-GIT/turtlebot3/issues/386>`_
+* Contributors: Matt Hansen, Alberto Soragna, Carl Delsey, sousou1, Emerson Knapp, Mikael Arguedas, Ross Desmond, Darby Lim, Pyo
 
 1.2.2 (2019-08-20)
 ------------------
