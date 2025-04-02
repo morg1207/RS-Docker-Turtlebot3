@@ -1,0 +1,18 @@
+services:
+  ros-noetic-turtlebot3:
+    image: ros_noetic_turtlebot3
+    privileged: true
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: cont_ros_noetic_turtlebot3
+    environment:
+      - DISPLAY=host.docker.internal:0.0
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - $HOME/.Xauthority:/root/.Xauthority:rw
+      - ./notebook:/notebook_ws
+      - ./proyecto_ros:/catkin_ws/src
+    network_mode: "host"
+
