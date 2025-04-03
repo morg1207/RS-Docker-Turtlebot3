@@ -38,3 +38,11 @@ ros2 launch turtlebot3_gazebo main_turtlebot3_lab.launch.xml
 ```
 
 ## 2 Linux
+
+#### 1.3 Ejecutar docker 
+1. Ejecutar Docker Desktop
+2. Ejecutar servidor X11 instalado
+3. Ejecutar docker compose 
+```bash
+DISPLAY_VALUE=:0 docker-compose up
+```
