@@ -15,7 +15,8 @@
 				"ms-iot.vscode-ros",
 				"smilerobotics.urdf",
 				"morningfrog.urdf-visualizer",
-				"ms-vscode.cmake-tools"
+				"ms-vscode.cmake-tools",
+				"ms-toolsai.jupyter-renderers"
 			]
 		}
 	}

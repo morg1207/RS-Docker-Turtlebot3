@@ -1,5 +1,5 @@
 # Argumento para usarlo a lo largo del dockerfile 
-ARG ROS_DISTRO=foxy  # Valor por defecto
+ARG ROS_DISTRO=noetic  # Valor por defecto
 
 # Imagen base
 FROM osrf/ros:noetic-desktop-full
@@ -17,8 +17,8 @@ SHELL ["/bin/bash", "-c"]
 
 # Instalar herramientas adicionales
 RUN apt-get update && apt-get install -y \
-    ros-noetic-turtlesim \
-    ros-noetic-teleop-twist-keyboard \
+    ros-${ROS_DISTRO}-turtlesim \
+    ros-${ROS_DISTRO}-teleop-twist-keyboard \
     nano \
     git \
     python3-rosdep \
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
 ARG CACHEBUST=1
 
 # Clonar el repositorio del simulador de warehouse
-RUN git clone -b ros-noetic https://github.com/morg1207/RS-Turtlebot3.git /simulation_ws/src/RS-Turttlebot3
+RUN git clone -b ros-${ROS_DISTRO} https://github.com/morg1207/RS-Turtlebot3.git /simulation_ws/src/RS-Turtlebot3
 
 # Decargar dependencias de simulación y compilar la simulación
 RUN cd /simulation_ws && \
@@ -39,14 +39,14 @@ RUN cd /simulation_ws && \
     rosdep update --rosdistro $ROS_DISTRO && \
     rosdep fix-permissions && \
     rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y && \
-    colcon build --symlink-install
+    catkin_make
 
 # Posicionar el terminal en mi espacio de trabajo
 WORKDIR /catkin_ws
 
 # Configurar el entorno para ROS en todos los shells
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc && \
-    echo "source /catkin_ws/devel/setup.bash"" >> ~/.bashrc
+    echo "source /catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 # Copiar el script de entrada
 COPY ./ros_entrypoint.sh /ros_entrypoint.sh
