@@ -1,0 +1,23 @@
+services:
+  ros-foxy:
+    image: ros_foxy
+    privileged: true
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: cont_ros_foxy
+    environment:
+      - DISPLAY=${DISPLAY_VALUE:-host.docker.internal:0.0}
+      - QT_X11_NO_MITSHM=1
+      - NVIDIA_VISIBLE_DEVICES=all
+      - GAZEBO_MODEL_PATH=/usr/share/gazebo-11/models
+      - GAZEBO_RESOURCE_PATH=/usr/share/gazebo-11
+      - GAZEBO_MASTER_URI=http://localhost:11345
+      - LIBGL_ALWAYS_SOFTWARE=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - $HOME/.Xauthority:/root/.Xauthority:rw
+      - ./notebook:/notebook_ws
+      - ./proyecto_ros:/ros2_ws/src
+    network_mode: "host"
+

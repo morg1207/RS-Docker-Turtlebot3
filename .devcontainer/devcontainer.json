@@ -1,0 +1,23 @@
+{
+	"name": "ROS devcontainer for vscode",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "ros-foxy",
+	"workspaceFolder": "/ros2_ws",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-vscode.cpptools",  // Extensión de C++
+				"ms-iot.vscode-ros",
+				"smilerobotics.urdf",
+				"morningfrog.urdf-visualizer",
+				"ms-vscode.cmake-tools",
+				"ms-toolsai.jupyter-renderers"
+			]
+		}
+	}
+}
