@@ -1,30 +1,36 @@
-## DOCKER PARA EL PROYECTO: ROS1 CONCEPTOS BÁSICOS DE THE CONSTRUCT
+# 🐳 Docker para ROS Noetic - Conceptos Básicos (The Construct)  
+**Rama actual:** `ros-noetic`  
 
-### Nota: Te encuentras en la rama de ros-noetic
 
-### 1. Instrucciones para ejecutar en Windows
 
-#### 1.1 Sotfware necesario
-1. Tener instalado WSL2
-1. Tener instalado Docker Desktop
-2. Tener un servidor X11 para linux (https://sourceforge.net/projects/xming/)
+---
 
-#### 1.2 Configuración previa
-1. Ejecutar Docker Desktop
-2. Ejecutar servidor X11 instalado
+## 🖥️ **1. Configuración para Windows**  
 
-#### 1.3 Descargar archivos
+### 📋 **1.1 Requisitos de sotfware**  
+| Software | Enlace |
+|----------|--------|
+| WSL2 | [Instalación](https://aka.ms/wsl2-install) |
+| Docker Desktop | [Descarga](https://docs.docker.com/desktop/setup/install/windows-install/) |
+| Xming Server  | [Descarga](https://sourceforge.net/projects/xming/) |
+| Visual Studio Code  | [Descarga](https://code.visualstudio.com/) |
 
+ 1. Se necesita que **Docker** Compose este ejecutándose.
+ 2. Se necesita **xlaunch server** este ejecutándose.
+
+### 📥 **1.2 Clonar Repositorio**  
 ```bash
 # Crear carpeta de trabajo
 mkdir -p ~/docker/ros-conceptos-basicos
 # Ir a mi carpeta de trabajo
-cd ~/docker/ros-conceptos-basicos
+cd ~/docker
 # Clonar repositorio
-git clone -b ros-noetic https://github.com/morg1207/RS-Docker-Turtlebot3.git
+git clone -b ros-noetic https://github.com/morg1207/RS-Docker-Turtlebot3.git ~/docker/ros-conceptos-basicos
 ```
 
-#### 1.4 Compilar Docker
+### 🐋 **1.3 Construcción del Entorno Docker**  
+
+1. 🔨 **Compilar Imagen**  
 ```bash
 #Ir a la carpeta de archivos
 cd ~/docker/ros-conceptos-basicos
@@ -32,29 +38,112 @@ cd ~/docker/ros-conceptos-basicos
 sudo docker compose build 
 ```
 
-#### 1.3 Ejecutar Docker Compose
-
+2. 🚀 **Ejecutar Contenedor**  
 ```bash
+# Eliminar contenedor si ya existe
+sudo docker container rm cont_ros_noetic_turtlebot3
 # Ejecutar docker compose 
 sudo docker compose up
 ```
 
-#### 1.4 Ejecutar simulacion
+
+### 🤖 **1.4. Simulación con TurtleBot3**  
+
+1. 📂 **Ejecutar Simulación**  
 ```bash
+# Ejecutar un terminal dentro del contenedor
+docker exec -it cont_ros_noetic_turtlebot3 bash
 # Ir a mi carpeta de simulación
-cd /simulation_ws/
-# Configuro el espacio de trabajo
-source /simulation_ws/devel/setup.bash
-# Lanza el launch de la simulación
+cd /simulation_ws
+# Configurar el espacio de trabajo
+source devel/setup.bash
+# Lanzar el launch de la simulación
 roslaunch realrobotlab main.launch
 ```
+### 🛠 **1.5 Configuración Avanzada con Dev Containers**   
 
-## 2 Linux
+**Recomendación profesional:** Para un flujo de trabajo integrado en ROS, utiliza **VS Code con Dev Containers** para:  
+- 🔄 Desarrollo nativo dentro del contenedor  
+- 📁 Acceso completo al filesystem  
+- 🐛 Depuración integrada  
 
-#### 1.3 Ejecutar docker 
-1. Ejecutar Docker Desktop
-2. Ejecutar servidor X11 instalado
-3. Ejecutar docker compose 
+#### **Pasos para configuración:**  
+
+1. **Instalar requisitos previos:** 
+   - [VS Code](https://code.visualstudio.com/)  
+   - Extensión [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)  
+
+2. **Abrir el proyecto en un contenedor:**  
+
+    Presiona `Ctrl+Shift+P` → **"Dev Container: Reopen in Container"**  
+   *VS Code detectará automáticamente la configuración en `.devcontainer/`*
+
+---
+## 🐧 **2. Configuración para Linux**  
+
+### 📋 **2.1 Requisitos**  
+| Software | Enlace |
+|----------|--------|
+| Docker Engine | [Descarga](https://docs.docker.com/engine/install/ubuntu/) |
+| Visual Studio Code  | [Descarga](https://code.visualstudio.com/) |
+
+
+### 📥 **2.2 Clonar Repositorio**  
 ```bash
+# Crear carpeta de trabajo
+mkdir -p ~/docker/ros-conceptos-basicos
+# Ir a mi carpeta de trabajo
+cd ~/docker
+# Clonar repositorio
+git clone -b ros-noetic https://github.com/morg1207/RS-Docker-Turtlebot3.git ~/docker/ros-conceptos-basicos
+```
+
+### 🐋 **2.3 Construcción del Entorno Docker**  
+
+1. 🔨 **Compilar Imagen**  
+```bash
+#Ir a la carpeta de archivos
+cd ~/docker/ros-conceptos-basicos
+# Construir imagen
+sudo docker compose build 
+```
+
+2. 🚀 **Ejecutar Contenedor**  
+```bash
+# Eliminar contenedor si ya existe
+sudo docker container rm cont_ros_noetic_turtlebot3
+# Ejecutar docker compose 
 DISPLAY_VALUE=:0 docker-compose up
 ```
+
+
+### 🤖 **2.4. Simulación con TurtleBot3**  
+
+1. 📂 **Ejecutar Simulación**  
+```bash
+# Ejecutar un terminal dentro del contenedor
+docker exec -it cont_ros_noetic_turtlebot3 bash
+# Ir a mi carpeta de simulación
+cd /simulation_ws
+# Configurar el espacio de trabajo
+source devel/setup.bash
+# Lanzar el launch de la simulación
+roslaunch realrobotlab main.launch
+```
+### 🛠 **2.5 Configuración Avanzada con Dev Containers**   
+
+**Recomendación profesional:** Para un flujo de trabajo integrado en ROS, utiliza **VS Code con Dev Containers** para:  
+- 🔄 Desarrollo nativo dentro del contenedor  
+- 📁 Acceso completo al filesystem  
+- 🐛 Depuración integrada  
+
+#### **Pasos para configuración:**  
+
+1. **Instalar requisitos previos:** 
+   - [VS Code](https://code.visualstudio.com/)  
+   - Extensión [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)  
+
+2. **Abrir el proyecto en un contenedor:**  
+
+    Presiona `Ctrl+Shift+P` → **"Dev Container: Reopen in Container"**  
+   *VS Code detectará automáticamente la configuración en `.devcontainer/`*

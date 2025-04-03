@@ -7,7 +7,7 @@
 
 ## 🖥️ **1. Configuración para Windows**  
 
-### 📋 **1.1 Requisitos**  
+### 📋 **1.1 Requisitos de sotfware**  
 | Software | Enlace |
 |----------|--------|
 | WSL2 | [Instalación](https://aka.ms/wsl2-install) |
@@ -15,6 +15,8 @@
 | Xming Server  | [Descarga](https://sourceforge.net/projects/xming/) |
 | Visual Studio Code  | [Descarga](https://code.visualstudio.com/) |
 
+ 1. Se necesita que **Docker** Compose este ejecutándose.
+ 2. Se necesita **xlaunch server** este ejecutándose.
 
 ### 📥 **1.2 Clonar Repositorio**  
 ```bash
@@ -45,12 +47,12 @@ sudo docker compose up
 ```
 
 
-## 🤖 **3. Simulación con TurtleBot3**  
+### 🤖 **1.4. Simulación con TurtleBot3**  
 
-### 📂 **3.1 Ejecutar Simulación**  
+1. 📂 **Ejecutar Simulación**  
 ```bash
 # Ejecutar un terminal dentro del contenedor
-docker exec -it cont_ros_noetic_turtlebot3s bash
+docker exec -it cont_ros_noetic_turtlebot3 bash
 # Ir a mi carpeta de simulación
 cd /simulation_ws
 # Configurar el espacio de trabajo
@@ -58,49 +60,73 @@ source devel/setup.bash
 # Lanzar el launch de la simulación
 roslaunch realrobotlab main.launch
 ```
+### 🛠 **1.4 Configuración Avanzada con Dev Containers**   
 
-## 🐧 **4. Configuración para Linux**  
+**Recomendación profesional:** Para un flujo de trabajo integrado en ROS, utiliza **VS Code con Dev Containers** para:  
+- 🔄 Desarrollo nativo dentro del contenedor  
+- 📁 Acceso completo al filesystem  
+- 🐛 Depuración integrada  
 
-### ✨ **Diferencias Clave**  
+#### **Pasos para configuración:**  
+
+1. **Instalar requisitos previos:** 
+   - [VS Code](https://code.visualstudio.com/)  
+   - Extensión [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)  
+
+2. **Abrir el proyecto en un contenedor:**  
+
+    Presiona `Ctrl+Shift+P` → **"Dev Container: Reopen in Container"**  
+   *VS Code detectará automáticamente la configuración en `.devcontainer/`*
+
+
+## 🐧 **2. Configuración para Linux**  
+
+### 📋 **2.1 Requisitos**  
+| Software | Enlace |
+|----------|--------|
+| Docker Engine | [Descarga](https://docs.docker.com/engine/install/ubuntu/) |
+| Visual Studio Code  | [Descarga](https://code.visualstudio.com/) |
+
+
+### 📥 **2.2 Clonar Repositorio**  
 ```bash
-export DISPLAY=:0
-xhost +local:docker
-docker compose -f docker-compose.linux.yml up
+# Crear carpeta de trabajo
+mkdir -p ~/docker/ros-conceptos-basicos
+# Ir a mi carpeta de trabajo
+cd ~/docker
+# Clonar repositorio
+git clone -b ros-noetic https://github.com/morg1207/RS-Docker-Turtlebot3.git ~/docker/ros-conceptos-basicos
 ```
 
-### 🔧 **Solución de Problemas Comunes**  
+### 🐋 **2.3 Construcción del Entorno Docker**  
+
+1. 🔨 **Compilar Imagen**  
 ```bash
-# Si falla X11:
-sudo apt install xauth libgl1-mesa-glx
+#Ir a la carpeta de archivos
+cd ~/docker/ros-conceptos-basicos
+# Construir imagen
+sudo docker compose build 
 ```
 
----
-
-## 📌 **5. Diagrama de Arquitectura**  
-```mermaid
-graph TD
-  A[Host Windows/Linux] -->|X11| B[Docker Container]
-  B --> C[ROS Noetic]
-  C --> D[Gazebo]
-  C --> E[RViz]
-  D --> F[TurtleBot3]
+2. 🚀 **Ejecutar Contenedor**  
+```bash
+# Eliminar contenedor si ya existe
+sudo docker container rm cont_ros_noetic_turtlebot3
+# Ejecutar docker compose 
+DISPLAY_VALUE=:0 docker-compose up
 ```
 
----
 
-## 📎 **Anexos**  
-1. [Cheatsheet ROS Noetic](https://cheatsheet.dennyzhang.com/cheatsheet-ros-a4)  
-2. [Documentación Oficial TurtleBot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)  
+### 🤖 **2.4. Simulación con TurtleBot3**  
 
-*(Incluye aquí capturas reales de tu simulación funcionando)*  
-
---- 
-
-**Nota:** Todos los comandos asumen que estás en la raíz del proyecto. Para soporte técnico, contacta a [tu-email@dominio.com].  
-
---- 
-
-✨ **Tips Profesionales:**  
-- Usa `docker compose logs` para depuración  
-- Añade un vídeo corto (GIF) mostrando la simulación en acción  
-- Incluye un QR que enlace al repositorio
+1. 📂 **Ejecutar Simulación**  
+```bash
+# Ejecutar un terminal dentro del contenedor
+docker exec -it cont_ros_noetic_turtlebot3 bash
+# Ir a mi carpeta de simulación
+cd /simulation_ws
+# Configurar el espacio de trabajo
+source devel/setup.bash
+# Lanzar el launch de la simulación
+roslaunch realrobotlab main.launch
+```
