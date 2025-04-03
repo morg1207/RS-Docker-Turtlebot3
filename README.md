@@ -1,8 +1,6 @@
 # 🐳 Docker para ROS Noetic - Conceptos Básicos (The Construct)  
 **Rama actual:** `ros-noetic`  
 
-
-
 ---
 
 ## 🖥️ **1. Configuración para Windows**  
@@ -66,6 +64,7 @@ roslaunch realrobotlab main.launch
 - 🔄 Desarrollo nativo dentro del contenedor  
 - 📁 Acceso completo al filesystem  
 - 🐛 Depuración integrada  
+-  Extensiones de VS Code integradas y configuradas
 
 #### **Pasos para configuración:**  
 

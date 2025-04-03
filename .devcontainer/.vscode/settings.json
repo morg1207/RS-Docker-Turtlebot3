@@ -1,0 +1,15 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    "ros.distro": "noetic",
+    "python.analysis.extraPaths": [
+      "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "cmake.configureSettings": {
+      "CMAKE_PREFIX_PATH": "/opt/ros/noetic"
+    },
+    "cmake.sourceDirectory": "/catkin_ws/src/test",
+    "workbench.colorCustomizations": {
+    "terminal.background": "#012456",
+    "terminal.foreground": "#ececec"
+    }
+  }
