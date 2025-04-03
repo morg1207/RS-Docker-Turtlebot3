@@ -8,8 +8,4 @@
       "CMAKE_PREFIX_PATH": "/opt/ros/noetic"
     },
     "cmake.sourceDirectory": "/catkin_ws/src/test",
-    "workbench.colorCustomizations": {
-    "terminal.background": "#012456",
-    "terminal.foreground": "#ececec"
-    }
   }
