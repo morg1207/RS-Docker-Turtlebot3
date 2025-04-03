@@ -21,7 +21,7 @@
 # Crear carpeta de trabajo
 mkdir -p ~/docker/ros-conceptos-basicos
 # Ir a mi carpeta de trabajo
-cd ~/docker
+cd ~/docker/ros-conceptos-basicos
 # Clonar repositorio
 git clone -b ros-noetic https://github.com/morg1207/RS-Docker-Turtlebot3.git ~/docker/ros-conceptos-basicos
 ```
@@ -38,6 +38,8 @@ sudo docker compose build
 
 2. 🚀 **Ejecutar Contenedor**  
 ```bash
+# Detengo el contendor si esta en ejecución
+sudo docker container stop cont_ros_noetic_turtlebot3
 # Eliminar contenedor si ya existe
 sudo docker container rm cont_ros_noetic_turtlebot3
 # Ejecutar docker compose 
@@ -73,7 +75,12 @@ roslaunch realrobotlab main.launch
    - Extensión [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)  
 
 2. **Abrir el proyecto en un contenedor:**  
-
+```bash
+# Ir a la carpeta de archivos
+cd ~/docker/ros-conceptos-basicos
+# Abro VS Code desde este carpeta
+code ./
+```
     Presiona `Ctrl+Shift+P` → **"Dev Container: Reopen in Container"**  
    *VS Code detectará automáticamente la configuración en `.devcontainer/`*
 

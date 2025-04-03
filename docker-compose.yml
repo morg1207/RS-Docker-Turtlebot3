@@ -15,7 +15,7 @@ services:
       - $HOME/.Xauthority:/root/.Xauthority:rw
       # WORKSPACE (solo lectura)
       - ./notebook:/catkin_ws/notebook:ro
-      - ./.devcontainer/.vscode:/catkin_ws/.vscode:ro
+      - ./.devcontainer/.vscode:/catkin_ws/.vscode:rw
       # WORKSPACE (solo lectura)
       - ./proyecto_ros:/catkin_ws/src
     network_mode: "host"
