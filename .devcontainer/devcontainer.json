@@ -3,21 +3,26 @@
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
-	"service": "ros-foxy",
+	"service": "ros-foxy-turtlebot3",
+	//"workspaceFolder": "/ros.code-workspace",
 	"workspaceFolder": "/ros2_ws",
+	
 	"shutdownAction": "stopCompose",
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			// Add the IDs of extensions you want installed when the container is created.
+  // Personalización de VS Code
+  "customizations": {
+    "vscode": {
 			"extensions": [
-				"ms-vscode.cpptools",  // Extensión de C++
+				"ms-vscode.cpptools-extension-pack",
 				"ms-iot.vscode-ros",
 				"smilerobotics.urdf",
 				"morningfrog.urdf-visualizer",
 				"ms-vscode.cmake-tools",
-				"ms-toolsai.jupyter-renderers"
+				"ms-toolsai.jupyter-renderers",
+				"ms-iot.vscode-ros"
+				///"github.copilot"
+				
 			]
 		}
 	}
+
 }

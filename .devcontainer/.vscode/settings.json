@@ -1,0 +1,13 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    "ros.distro": "foxy",
+    "python.analysis.extraPaths": [
+      "/opt/ros/foxy/lib/python3/dist-packages"
+    ],
+    "cmake.configureSettings": {
+      "CMAKE_PREFIX_PATH": "/opt/ros/foxy"
+    },
+    "python.autoComplete.extraPaths": [
+      "/opt/ros/foxy/lib/python3.8/site-packages"
+    ]
+  }
