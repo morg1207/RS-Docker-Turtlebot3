@@ -1,6 +1,7 @@
 # 🐳 Docker para ROS Foxy - Conceptos Básicos (The Construct)  
 **Rama actual:** `ros-foxy`  
 
+<img src="./images/ros_foxy.png" alt="Ros_foxy" width="200"/>
 ---
 
 ## 🖥️ **1. Configuración para Windows**  

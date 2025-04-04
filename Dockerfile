@@ -28,9 +28,15 @@ RUN apt-get update && apt-get install -y \
     ros-${ROS_DISTRO}-teleop-twist-keyboard && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y \
-    ros-${ROS_DISTRO}-gazebo-ros-pkgs && \
-    rm -rf /var/lib/apt/lists/*
+# Intentar Gazebo con reintento automático
+RUN apt-get update && (apt-get install -y ros-${ROS_DISTRO}-gazebo-ros-pkgs || \
+     apt-get install -y ros-${ROS_DISTRO}-gazebo-ros-pkgs) \
+    && rm -rf /var/lib/apt/lists/*
+
+# Configurar rosdep con manejo explícito de errores
+RUN rosdep init || true && \
+    rosdep update --rosdistro $ROS_DISTRO && \
+    rosdep fix-permissions
 
 # Argumento para evitar el caché y siempre tener actualizado mi repositorio
 ARG CACHEBUST=1
