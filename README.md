@@ -119,7 +119,7 @@ sudo docker compose build
 # Eliminar contenedor si ya existe
 sudo docker container rm cont_ros_noetic_turtlebot3
 # Ejecutar docker compose 
-DISPLAY_VALUE=:0 docker-compose up
+DISPLAY_VALUE=:0 docker compose up
 ```
 
 
@@ -143,13 +143,21 @@ roslaunch realrobotlab main.launch
 - 📁 Acceso completo al filesystem  
 - 🐛 Depuración integrada  
 
-#### **Pasos para configuración:**  
+#### **Pasos para configuración:** 
 
-1. **Instalar requisitos previos:** 
+1. 🚀 **Elimino el contenedor si ya ha sido creado**  
+```bash
+# Detengo el contendor si esta en ejecución
+sudo docker container stop cont_ros_noetic_turtlebot3
+# Eliminar contenedor si ya existe
+sudo docker container rm cont_ros_noetic_turtlebot3
+```
+
+2. **Instalar requisitos previos:** 
    - [VS Code](https://code.visualstudio.com/)  
    - Extensión [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)  
 
-2. **Abrir el proyecto en un contenedor:**  
+3. **Abrir el proyecto en un contenedor:**  
 
     Presiona `Ctrl+Shift+P` → **"Dev Container: Reopen in Container"**  
    *VS Code detectará automáticamente la configuración en `.devcontainer/`*
