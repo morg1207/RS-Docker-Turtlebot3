@@ -5,6 +5,7 @@ services:
     build: 
       context: .
       dockerfile: ./Dockerfile
+      network: host  # <-- Añade esta línea
     container_name: cont_ros_foxy_turtlebot3
     environment:
       - DISPLAY=${DISPLAY_VALUE:-host.docker.internal:0.0}

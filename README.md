@@ -117,17 +117,23 @@ sudo docker compose build
 ```
 
 2. 🚀 **Ejecutar Contenedor**  
+
+   Terminal 1 
+
 ```bash
 # Eliminar contenedor si ya existe
 sudo docker container rm cont_ros_foxy_turtlebot3
 # Ejecutar docker compose 
-DISPLAY_VALUE=:0 docker-compose up
+DISPLAY_VALUE=:0 docker compose up
 ```
 
 
 ### 🤖 **2.4. Simulación con TurtleBot3**  
 
-1. 📂 **Ejecutar Simulación**  
+1. 📂 **Ejecutar Simulación** 
+
+   Terminal 2
+
 ```bash
 # Ejecutar un terminal dentro del contenedor
 docker exec -it cont_ros_foxy_turtlebot3 bash
