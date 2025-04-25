@@ -191,7 +191,7 @@ sudo docker container rm cont_ros_humble
 3. **Abrir el proyecto en un contenedor:**  
 ```bash
 # Ir a la carpeta de archivos
-cd ~/docker/ros-conceptos
+cd ~/docker/ros2-conceptos-basicos
 # Abro VS Code desde este carpeta
 code ./
 ```
