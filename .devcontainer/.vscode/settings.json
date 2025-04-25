@@ -9,5 +9,6 @@
     },
     "python.autoComplete.extraPaths": [
       "/opt/ros/foxy/lib/python3.8/site-packages"
-    ]
+    ],
+    "cmake.sourceDirectory": "/ros2_ws/src/test_package"
   }
