@@ -159,7 +159,7 @@ docker compose up
 # Ejecutar un terminal dentro del contenedor
 docker exec -it cont_ros_foxy_turtlebot3 bash
 # Configurar la variable de entorno DISPLAY
-export DISPLAY=0
+export DISPLAY=:0
 # Ir a mi carpeta de simulación
 cd /simulation_ws
 # Configurar el espacio de trabajo
@@ -204,5 +204,5 @@ code ./
    Esto solo hacerlo una vez, en la primera terminal que se abra.
 ```bash
 # Configurar la variable de entorno DISPLAY
-export DISPLAY=0
+export DISPLAY=:0
 ```
