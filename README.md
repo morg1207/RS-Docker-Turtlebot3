@@ -161,3 +161,4 @@ sudo docker container rm cont_ros_noetic_turtlebot3
 
     Presiona `Ctrl+Shift+P` → **"Dev Container: Reopen in Container"**  
    *VS Code detectará automáticamente la configuración en `.devcontainer/`*
+
