@@ -55,6 +55,8 @@ sudo docker compose up
 ```bash
 # Ejecutar un terminal dentro del contenedor
 docker exec -it cont_ros_foxy_turtlebot3 bash
+```
+```bash
 # Configurar la variable de entorno DISPLAY
 export DISPLAY=host.docker.internal:0.0
 # Ir a mi carpeta de simulación
@@ -158,6 +160,9 @@ docker compose up
 ```bash
 # Ejecutar un terminal dentro del contenedor
 docker exec -it cont_ros_foxy_turtlebot3 bash
+```
+
+```bash
 # Configurar la variable de entorno DISPLAY
 export DISPLAY=:0
 # Ir a mi carpeta de simulación

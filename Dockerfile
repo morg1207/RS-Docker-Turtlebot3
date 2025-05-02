@@ -39,7 +39,7 @@ RUN rosdep init || true && \
     rosdep fix-permissions
 
 # Argumento para evitar el caché y siempre tener actualizado mi repositorio
-ARG CACHEBUST=1
+ARG CACHEBUST=2
 
 # Clonar el repositorio del simulador de Turtlebot3
 RUN git clone -b ros-foxy https://github.com/morg1207/RS-Turttlebot3.git /simulation_ws/src/RS-Turttlebot3
